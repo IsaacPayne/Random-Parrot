@@ -14,17 +14,6 @@ class MainViewModel : ViewModel() {
     private var parrotList : List<Parrot>? = null
     private val repository: ParrotRepository = ParrotRepository()
 
-    //var getParrotList = liveData(Dispatchers.IO) {
-    //    if (parrotList == null) {
-    //        parrotList = repository.getParrots()
-    //    }
-//
-    //    val randomParrot = parrotList!![Random.nextInt(0, parrotList!!.size - 1)]
-    //    Log.i("MainViewModel", randomParrot.toString())
-//
-    //    emit(parrotList!!)
-    //}
-
     fun refreshRandomParrot() {
         viewModelScope.launch {
             // suspend and resume make this database request main-safe
